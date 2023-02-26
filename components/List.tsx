@@ -47,25 +47,25 @@ const List = ({
         <li key={todo.id} className="flex justify-between gap-1">
           <div className="">
             <h1
-              className={`bg-gradient-to-r from-purple-500 to-pink-500 text-black font-bold p-2 rounded-lg ${
+              className={` text-black font-bold p-2 rounded-lg ${
                 todo.completed
-                  ? "line-through decoration-2 decoration-red-500 text-slate-400"
-                  : ""
+                  ? "line-through decoration-2 decoration-red-500 bg-gradient-to-r from-blue-500 to-green-500"
+                  : "bg-gradient-to-r from-purple-500 to-pink-500"
               }`}
-            >{`${todo.title} - ${todo.description}`}</h1>
+            >{`${todo.title} · ${todo.description}`}</h1>
           </div>
           <div>
             <button>
               <IoMdCheckmarkCircleOutline
-                className="text-3xl"
+                className="text-3xl hover:text-gray-500"
                 onClick={() => handleComplete(todo)}
               />
             </button>
             <button onClick={() => handleEdit(todo)}>
-              <TbEdit className="text-3xl" />
+              <TbEdit className="text-3xl hover:text-gray-500" />
             </button>
             <button onClick={() => handleDelete(todo)}>
-              <MdDeleteForever className="text-3xl" />
+              <MdDeleteForever className="text-3xl hover:text-gray-500" />
             </button>
           </div>
         </li>

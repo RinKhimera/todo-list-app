@@ -92,12 +92,12 @@ const List = ({
   return (
     <div className="pb-6">
       <div>
-        <h1 className="text-center pb-6 text-3xl font-bold">Liste de tâches</h1>
+        <h1 className="text-center pb-6 text-3xl font-bold">Todo List</h1>
         <form onSubmit={onFormSubmit}>
-          <label className="text-lg pl-0.5">Titre</label>
+          <label className="text-lg pl-0.5">Summary</label>
           <input
             type="text"
-            placeholder="Apprendre React Hook Form"
+            placeholder="Learn React"
             className="block p-2 my-2 w-full rounded-lg text-black"
             {...register("Titre", {
               required: "Cette entrée est requise.",
@@ -108,27 +108,27 @@ const List = ({
             })}
             value={input}
             onChange={onInputChange}
-            maxLength={20}
+            maxLength={18}
             minLength={3}
             required
           />
-          <label className="text-lg pl-0.5">Ajoutez une description</label>
+          <label className="text-lg pl-0.5">Description</label>
           <textarea
-            placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit"
+            placeholder="Understand Props and State"
             className="block p-2 mt-2 mb-2 w-full rounded-lg text-black"
             {...register("Description", {})}
             value={desc}
             onChange={onDescChange}
-            maxLength={25}
+            maxLength={28}
             minLength={5}
           />
 
           <div className="flex flex-col items-center pt-6">
             <button
               type="submit"
-              className="bg-red-500 text-xl font-bold py-2 px-5 rounded-xl"
+              className="bg-red-500 hover:bg-red-600 text-xl font-bold py-2 px-5 rounded-xl"
             >
-              {editTodo ? "Modifier" : "Ajouter"}
+              {editTodo ? "Save changes" : "Add a task"}
             </button>
           </div>
         </form>

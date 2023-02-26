@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [todos, setTodos] = useState([]);
   const [editTodo, setEditTodo] = useState(null);
   return (
-    <div className="bg-hero grid h-screen">
+    <>
       <Head>
         <title>Todo List App</title>
         <meta
@@ -20,8 +20,8 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen flex justify-center items-center">
-        <div className="bg-indigo-900 text-slate-200 p-12 w-10/12 rounded-xl md:w-2/3 xl:w-1/2">
+      <div className="bg-hero min-h-screen flex justify-center items-center">
+        <div className="bg-indigo-900 text-slate-200 p-12 my-10 w-10/12 rounded-xl opacity-95 md:w-2/3 xl:w-1/2">
           {" "}
           <Tasks
             input={input}
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <List todos={todos} setTodos={setTodos} setEditTodo={setEditTodo} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
